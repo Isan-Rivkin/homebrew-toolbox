@@ -4,7 +4,6 @@ class R53 < Formula
   homepage "https://github.com/Isan-Rivkin/route53-cli"
   version "0.1.10"
   bottle :unneeded
-
   if OS.mac?
     url "https://github.com/Isan-Rivkin/route53-cli/releases/download/v0.1.10/route53-cli_0.1.10_darwin_amd64.tar.gz"
     sha256 "3bde3217db876ad5c4f2509794534460545166dcfd6c0e94cae85e0dbdfee858"
@@ -13,9 +12,7 @@ class R53 < Formula
     url "https://github.com/Isan-Rivkin/route53-cli/releases/download/v0.1.10/route53-cli_0.1.10_linux_amd64.tar.gz"
     sha256 "5a0400ba1441658de0a32118b161736103870d024b7ec09a5b9eb2d554f4c3bb"
   end
-  
   depends_on "git"
-
   def install
     bin.install "r53"
   end
