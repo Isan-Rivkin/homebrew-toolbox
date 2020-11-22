@@ -2,18 +2,21 @@
 class R53 < Formula
   desc "Cli tool for Route53 to quickly query values of records"
   homepage "https://github.com/Isan-Rivkin/route53-cli"
-  version "0.1.8"
+  version "0.1.10"
   bottle :unneeded
+
   if OS.mac?
-    url "https://github.com/Isan-Rivkin/route53-cli/releases/download/v0.1.8/route53-cli_0.1.8_darwin_amd64.tar.gz"
-    sha256 "74aeda1e513aaaefce19824f81e5b3f997c8625b8fcbbbdfdf0c3337e74c817d"
+    url "https://github.com/Isan-Rivkin/route53-cli/releases/download/v0.1.10/route53-cli_0.1.10_darwin_amd64.tar.gz"
+    sha256 "3bde3217db876ad5c4f2509794534460545166dcfd6c0e94cae85e0dbdfee858"
   end
   if OS.linux? && Hardware::CPU.intel?
-    url "https://github.com/Isan-Rivkin/route53-cli/releases/download/v0.1.8/route53-cli_0.1.8_linux_amd64.tar.gz"
-    sha256 "e8f431402f2e04f979d8bcb68f7d1b55a22887eb7b62b99ee740878f7e224af3"
+    url "https://github.com/Isan-Rivkin/route53-cli/releases/download/v0.1.10/route53-cli_0.1.10_linux_amd64.tar.gz"
+    sha256 "5a0400ba1441658de0a32118b161736103870d024b7ec09a5b9eb2d554f4c3bb"
   end
+  
   depends_on "git"
+
   def install
-    bin.install "route53-cli"
+    bin.install "r53"
   end
 end
