@@ -4,7 +4,6 @@ class Kq < Formula
   homepage "https://github.com/Isan-Rivkin/kube_query"
   version "0.1.0"
   bottle :unneeded
-
   if OS.mac?
     url "https://github.com/Isan-Rivkin/kube_query/releases/download/v0.1.0/kube_query_0.1.0_darwin_amd64.tar.gz"
     sha256 "dcb12b26abdb6189fc73682c4ac4959535eb024de35751dec5ae4370228c9a84"
@@ -13,9 +12,7 @@ class Kq < Formula
     url "https://github.com/Isan-Rivkin/kube_query/releases/download/v0.1.0/kube_query_0.1.0_linux_amd64.tar.gz"
     sha256 "8720938d0745f4cc5d0e6974e48b13f8f59ce83b9d8e2efcd65a8e304cddbd06"
   end
-  
   depends_on "git"
-
   def install
     bin.install "kq"
   end
