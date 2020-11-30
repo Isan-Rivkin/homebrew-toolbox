@@ -2,17 +2,20 @@
 class Kq < Formula
   desc "Cli tool for querying all your kubernetes clusters"
   homepage "https://github.com/Isan-Rivkin/kube_query"
-  version "0.1.0"
+  version "0.1.1"
   bottle :unneeded
+
   if OS.mac?
-    url "https://github.com/Isan-Rivkin/kube_query/releases/download/v0.1.0/kube_query_0.1.0_darwin_amd64.tar.gz"
-    sha256 "dcb12b26abdb6189fc73682c4ac4959535eb024de35751dec5ae4370228c9a84"
+    url "https://github.com/Isan-Rivkin/kube_query/releases/download/v0.1.1/kube_query_0.1.1_darwin_amd64.tar.gz"
+    sha256 "3c48bbf6f4833b7365c9aa9c3f8152ce0a223cc0047a90340d3593482eeb42eb"
   end
   if OS.linux? && Hardware::CPU.intel?
-    url "https://github.com/Isan-Rivkin/kube_query/releases/download/v0.1.0/kube_query_0.1.0_linux_amd64.tar.gz"
-    sha256 "8720938d0745f4cc5d0e6974e48b13f8f59ce83b9d8e2efcd65a8e304cddbd06"
+    url "https://github.com/Isan-Rivkin/kube_query/releases/download/v0.1.1/kube_query_0.1.1_linux_amd64.tar.gz"
+    sha256 "7234281c23bd303b16d97be4b249ec446ae6ed115db9939b25af3e3bddd9500d"
   end
+
   depends_on "git"
+
   def install
     bin.install "kq"
   end
