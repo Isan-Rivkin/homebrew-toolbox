@@ -1,9 +1,18 @@
-# Isan-rivkin Route53-cli
+# Toolbox - Brew repository for Collection of different utilities 
 
 ## How do I install these formulae?
-`brew install isan-rivkin/route53-cli/<formula>`
+```bash
+brew tap isan-rivkin/toolbox
+```
 
-Or `brew tap isan-rivkin/route53-cli` and then `brew install <formula>`.
+Kube Query
 
-## Documentation
-`brew help`, `man brew` or check [Homebrew's documentation](https://docs.brew.sh).
+```bash
+brew install kq
+```
+
+Route53 CLI 
+
+```bash
+brew install r53
+```
