@@ -5,22 +5,30 @@
 class R53 < Formula
   desc "Cli tool for Route53 to quickly query values of records"
   homepage "https://github.com/Isan-Rivkin/route53-cli"
-  version "0.2.3"
+  version "0.3.0"
   bottle :unneeded
-  if OS.mac? && Hardware::CPU.intel?
-    url "https://github.com/Isan-Rivkin/route53-cli/releases/download/v0.2.3/route53-cli_0.2.3_darwin_amd64.tar.gz"
-    sha256 "402c6d0925d8c9a93dfec28945d6bd7d79f27a95eef65733570bd70dd4bf4f46"
+
+  on_macos do
+    if Hardware::CPU.intel?
+      url "https://github.com/Isan-Rivkin/route53-cli/releases/download/v0.3.0/route53-cli_0.3.0_darwin_amd64.tar.gz"
+      sha256 "be4d062e40da35208df2c41e74ea3f84377c893c8cdd0c63c8a9cf2b05ad537d"
+    end
   end
-  if OS.linux? && Hardware::CPU.intel?
-    url "https://github.com/Isan-Rivkin/route53-cli/releases/download/v0.2.3/route53-cli_0.2.3_linux_amd64.tar.gz"
-    sha256 "a2a98f6cbef49787aaad14cca6b4d582727f917f521d15a605936a0c1421e69e"
+
+  on_linux do
+    if Hardware::CPU.intel?
+      url "https://github.com/Isan-Rivkin/route53-cli/releases/download/v0.3.0/route53-cli_0.3.0_linux_amd64.tar.gz"
+      sha256 "930d134b82e5623b4927bee5e93b480ee505329c036516029007e703b46c656a"
+    end
+    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+      url "https://github.com/Isan-Rivkin/route53-cli/releases/download/v0.3.0/route53-cli_0.3.0_linux_arm64.tar.gz"
+      sha256 "16128817f31b64ee6a61534189bb224375d0190754e8be78a6f39e2c6f98bf88"
+    end
   end
-  if OS.linux? && Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-    url "https://github.com/Isan-Rivkin/route53-cli/releases/download/v0.2.3/route53-cli_0.2.3_linux_arm64.tar.gz"
-    sha256 "06ba6072c4a8ced18713196ec89fafc5a517ee5181311f1b54c99bdfa7e71e3b"
-  end
+
   depends_on "git"
+
   def install
-    bin.install "r53"
+    bin.install "route53-cli"
   end
 end
