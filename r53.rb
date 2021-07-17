@@ -25,6 +25,6 @@ class R53 < Formula
   end
   depends_on "git"
   def install
-    bin.install "route53-cli"
+    bin.install "r53"
   end
 end
