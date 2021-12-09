@@ -3,7 +3,6 @@ class R53 < Formula
   desc "Cli tool for Route53 to quickly query values of records"
   homepage "https://github.com/Isan-Rivkin/route53-cli"
   version "0.3.0"
-  bottle :unneeded
   on_macos do
     if Hardware::CPU.intel?
       url "https://github.com/Isan-Rivkin/route53-cli/releases/download/v0.3.0/route53-cli_0.3.0_darwin_amd64.tar.gz"
