@@ -6,6 +6,7 @@ class R53 < Formula
   desc "Cli tool for Route53 to quickly query values of records"
   homepage "https://github.com/Isan-Rivkin/route53-cli"
   version "0.3.1"
+  depends_on "git"
   on_macos do
     if Hardware::CPU.intel?
       url "https://github.com/Isan-Rivkin/route53-cli/releases/download/v0.3.1/route53-cli_0.3.1_darwin_amd64.tar.gz"
@@ -32,5 +33,4 @@ class R53 < Formula
       end
     end
   end
-  depends_on "git"
 end
