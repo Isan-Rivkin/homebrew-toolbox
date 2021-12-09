@@ -3,7 +3,6 @@ class Kq < Formula
   desc "Cli tool for querying all your kubernetes clusters"
   homepage "https://github.com/Isan-Rivkin/kube_query"
   version "0.1.1"
-  bottle :unneeded
   if OS.mac?
     url "https://github.com/Isan-Rivkin/kube_query/releases/download/v0.1.1/kube_query_0.1.1_darwin_amd64.tar.gz"
     sha256 "3c48bbf6f4833b7365c9aa9c3f8152ce0a223cc0047a90340d3593482eeb42eb"
