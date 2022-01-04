@@ -16,3 +16,9 @@ brew install kq
 ```bash
 brew install r53
 ```
+
+[Bolt DB Web UI](https://github.com/Isan-Rivkin/boltdbweb)
+
+```bash
+brew install boltdbweb
+```
