@@ -5,20 +5,20 @@
 class Boltdbweb < Formula
   desc "Bolt DB Web UI"
   homepage "https://github.com/Isan-Rivkin/boltdbweb"
-  version "1.0.1"
+  version "1.0.2"
 
   on_macos do
-    if Hardware::CPU.arm?
-      url "https://github.com/Isan-Rivkin/boltdbweb/releases/download/v1.0.1/boltdbweb_1.0.1_darwin_arm64.tar.gz"
-      sha256 "5ea29781e7cd3a7beed79e4e34587d10508d7b2b647b11a2491f44f8a69e0bcc"
+    if Hardware::CPU.intel?
+      url "https://github.com/Isan-Rivkin/boltdbweb/releases/download/v1.0.2/boltdbweb_1.0.2_darwin_amd64.tar.gz"
+      sha256 "e24065f2783b4041c8bae8bd29317296b875c1c4367caeb5444e9024520418db"
 
       def install
         bin.install "boltdbweb"
       end
     end
-    if Hardware::CPU.intel?
-      url "https://github.com/Isan-Rivkin/boltdbweb/releases/download/v1.0.1/boltdbweb_1.0.1_darwin_amd64.tar.gz"
-      sha256 "3368cb202da4291c4e88f56cb3d5c6548d3ed7d631726909e881c4936590166d"
+    if Hardware::CPU.arm?
+      url "https://github.com/Isan-Rivkin/boltdbweb/releases/download/v1.0.2/boltdbweb_1.0.2_darwin_arm64.tar.gz"
+      sha256 "084490c8878ff1499bad09f824ba4ae4b93acdd4a4511f1d1d1e5c5e4dc8d356"
 
       def install
         bin.install "boltdbweb"
@@ -28,16 +28,16 @@ class Boltdbweb < Formula
 
   on_linux do
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/Isan-Rivkin/boltdbweb/releases/download/v1.0.1/boltdbweb_1.0.1_linux_arm64.tar.gz"
-      sha256 "a765c48ab0a6d08c786232a938a45f9264621ed71447cd394299cd4141ee3fa9"
+      url "https://github.com/Isan-Rivkin/boltdbweb/releases/download/v1.0.2/boltdbweb_1.0.2_linux_arm64.tar.gz"
+      sha256 "90a1a3567e0c40113945005bdf539fd458b3b66df5f82b477d321aed03f0b2e1"
 
       def install
         bin.install "boltdbweb"
       end
     end
     if Hardware::CPU.intel?
-      url "https://github.com/Isan-Rivkin/boltdbweb/releases/download/v1.0.1/boltdbweb_1.0.1_linux_amd64.tar.gz"
-      sha256 "20ba4caf3d6ec4a4d03174f82d1f1b3106228c904e1e45a0e860a5953465d57f"
+      url "https://github.com/Isan-Rivkin/boltdbweb/releases/download/v1.0.2/boltdbweb_1.0.2_linux_amd64.tar.gz"
+      sha256 "1bcaf24207d84500a22f045f6105100b5d3944578655dbac744217d4e7fa082e"
 
       def install
         bin.install "boltdbweb"
