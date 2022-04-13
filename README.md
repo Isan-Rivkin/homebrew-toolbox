@@ -22,3 +22,8 @@ brew install r53
 ```bash
 brew install boltdbweb
 ```
+[Surf CLI](https://github.com/Isan-Rivkin/surf)
+
+```bash
+brew install surf
+```
