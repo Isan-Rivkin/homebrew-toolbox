@@ -5,20 +5,20 @@
 class Surf < Formula
   desc "CLI Text Search across your infrastructure platforms"
   homepage "https://github.com/Isan-Rivkin/surf"
-  version "1.1.3"
+  version "1.1.4"
 
   on_macos do
     if Hardware::CPU.arm?
-      url "https://github.com/Isan-Rivkin/surf/releases/download/v1.1.3/surf_1.1.3_darwin_arm64.tar.gz"
-      sha256 "4f56cc1da6951640f154dc7fc78f360aa41719634b6926e1f4484fbf10d7ee13"
+      url "https://github.com/Isan-Rivkin/surf/releases/download/v1.1.4/surf_1.1.4_darwin_arm64.tar.gz"
+      sha256 "d77a18c120ded325ef4756925694f870eeae49e5748749eeeeb5c3cdcd4cbc8b"
 
       def install
         bin.install "surf"
       end
     end
     if Hardware::CPU.intel?
-      url "https://github.com/Isan-Rivkin/surf/releases/download/v1.1.3/surf_1.1.3_darwin_amd64.tar.gz"
-      sha256 "9d7a8f0ddbf1cc54eb653b2e9582e69d2ba70910dd5b44512e7cf9ecc7a8f6cc"
+      url "https://github.com/Isan-Rivkin/surf/releases/download/v1.1.4/surf_1.1.4_darwin_amd64.tar.gz"
+      sha256 "21f96fa0bacbca48de506dd0193208bf430f6dffbf7f4c9e909e13cc1e032851"
 
       def install
         bin.install "surf"
@@ -28,16 +28,16 @@ class Surf < Formula
 
   on_linux do
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/Isan-Rivkin/surf/releases/download/v1.1.3/surf_1.1.3_linux_arm64.tar.gz"
-      sha256 "f48060fbda4ff54afefcc3280b62bf3abc2de7689cf6eff115e2e8bf9b011c69"
+      url "https://github.com/Isan-Rivkin/surf/releases/download/v1.1.4/surf_1.1.4_linux_arm64.tar.gz"
+      sha256 "55cb9ba1f1db3dc4fb51c83931cbe78719af8b790454d56e25e16a183e7150eb"
 
       def install
         bin.install "surf"
       end
     end
     if Hardware::CPU.intel?
-      url "https://github.com/Isan-Rivkin/surf/releases/download/v1.1.3/surf_1.1.3_linux_amd64.tar.gz"
-      sha256 "7f77889ea0ff8c6e431bea4c8287c23971728640699efc9cf856eb1774148c96"
+      url "https://github.com/Isan-Rivkin/surf/releases/download/v1.1.4/surf_1.1.4_linux_amd64.tar.gz"
+      sha256 "639685707fb05c37c2aea5f0abc30e788a2b18ca9b4641f757c9dfbd55b44b90"
 
       def install
         bin.install "surf"
