@@ -5,12 +5,20 @@
 class R53 < Formula
   desc "Cli tool for Route53 to quickly query values of records"
   homepage "https://github.com/Isan-Rivkin/route53-cli"
-  version "0.3.2"
+  version "0.4.2"
 
   on_macos do
+    if Hardware::CPU.arm?
+      url "https://github.com/Isan-Rivkin/route53-cli/releases/download/v0.4.2/route53-cli_0.4.2_darwin_arm64.tar.gz"
+      sha256 "c061cfa9e05a80f853888b8b8bd2b9cd1386b8723126768a6b3707929da1d2a0"
+
+      def install
+        bin.install "r53"
+      end
+    end
     if Hardware::CPU.intel?
-      url "https://github.com/Isan-Rivkin/route53-cli/releases/download/v0.3.2/route53-cli_0.3.2_darwin_amd64.tar.gz"
-      sha256 "932e63329dc174fcc2483de627a613018c55811f2371161e6ccb787ed289cd41"
+      url "https://github.com/Isan-Rivkin/route53-cli/releases/download/v0.4.2/route53-cli_0.4.2_darwin_amd64.tar.gz"
+      sha256 "74f5b9db400889b414e054f9c152f9958507bb5144329d0660cf005f44f11da3"
 
       def install
         bin.install "r53"
@@ -19,17 +27,17 @@ class R53 < Formula
   end
 
   on_linux do
-    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/Isan-Rivkin/route53-cli/releases/download/v0.3.2/route53-cli_0.3.2_linux_arm64.tar.gz"
-      sha256 "91964cff25dfb9c143eab507094509f9cbe3fd42777478eab8817a01d5e3c7a1"
+    if Hardware::CPU.intel?
+      url "https://github.com/Isan-Rivkin/route53-cli/releases/download/v0.4.2/route53-cli_0.4.2_linux_amd64.tar.gz"
+      sha256 "0edb0cfc56ceeeed79f8587c59b10631e724b6b8747f0200f617dbf99b3b98ac"
 
       def install
         bin.install "r53"
       end
     end
-    if Hardware::CPU.intel?
-      url "https://github.com/Isan-Rivkin/route53-cli/releases/download/v0.3.2/route53-cli_0.3.2_linux_amd64.tar.gz"
-      sha256 "a04f72bf27c75a4f56d07485b452177460114d849faff77ddfe01c2d258359d5"
+    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+      url "https://github.com/Isan-Rivkin/route53-cli/releases/download/v0.4.2/route53-cli_0.4.2_linux_arm64.tar.gz"
+      sha256 "5ae93f524fe7c8a1ef8a8984ed6040f27d3307657f1f8a715743e58c82470079"
 
       def install
         bin.install "r53"
