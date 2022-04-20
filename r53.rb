@@ -5,20 +5,20 @@
 class R53 < Formula
   desc "Cli tool for Route53 to quickly query values of records"
   homepage "https://github.com/Isan-Rivkin/route53-cli"
-  version "0.4.2"
+  version "0.4.3"
 
   on_macos do
     if Hardware::CPU.arm?
-      url "https://github.com/Isan-Rivkin/route53-cli/releases/download/v0.4.2/route53-cli_0.4.2_darwin_arm64.tar.gz"
-      sha256 "c061cfa9e05a80f853888b8b8bd2b9cd1386b8723126768a6b3707929da1d2a0"
+      url "https://github.com/Isan-Rivkin/route53-cli/releases/download/v0.4.3/route53-cli_0.4.3_darwin_arm64.tar.gz"
+      sha256 "6cab9d063ebb52fb25e82a24700459033748de608c07412cc14e07a857a7cba8"
 
       def install
         bin.install "r53"
       end
     end
     if Hardware::CPU.intel?
-      url "https://github.com/Isan-Rivkin/route53-cli/releases/download/v0.4.2/route53-cli_0.4.2_darwin_amd64.tar.gz"
-      sha256 "74f5b9db400889b414e054f9c152f9958507bb5144329d0660cf005f44f11da3"
+      url "https://github.com/Isan-Rivkin/route53-cli/releases/download/v0.4.3/route53-cli_0.4.3_darwin_amd64.tar.gz"
+      sha256 "e45e018832285f7f28e041ffe2769e4788c78009580a639e0a376e2bd263fefd"
 
       def install
         bin.install "r53"
@@ -27,17 +27,17 @@ class R53 < Formula
   end
 
   on_linux do
-    if Hardware::CPU.intel?
-      url "https://github.com/Isan-Rivkin/route53-cli/releases/download/v0.4.2/route53-cli_0.4.2_linux_amd64.tar.gz"
-      sha256 "0edb0cfc56ceeeed79f8587c59b10631e724b6b8747f0200f617dbf99b3b98ac"
+    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+      url "https://github.com/Isan-Rivkin/route53-cli/releases/download/v0.4.3/route53-cli_0.4.3_linux_arm64.tar.gz"
+      sha256 "dbc3ea7d6d9179b3957a05f0beb8e659bdaf4e9d3a00dc944c56aa7a7f320ad5"
 
       def install
         bin.install "r53"
       end
     end
-    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/Isan-Rivkin/route53-cli/releases/download/v0.4.2/route53-cli_0.4.2_linux_arm64.tar.gz"
-      sha256 "5ae93f524fe7c8a1ef8a8984ed6040f27d3307657f1f8a715743e58c82470079"
+    if Hardware::CPU.intel?
+      url "https://github.com/Isan-Rivkin/route53-cli/releases/download/v0.4.3/route53-cli_0.4.3_linux_amd64.tar.gz"
+      sha256 "4d7d7b8f1804ea30b32bbc7e7253183d7948df922d23a6d11657b21f18acd93a"
 
       def install
         bin.install "r53"
