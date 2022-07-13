@@ -5,20 +5,20 @@
 class Surf < Formula
   desc "CLI Text Search across your infrastructure platforms"
   homepage "https://github.com/Isan-Rivkin/surf"
-  version "1.4.2"
+  version "1.5.0"
 
   on_macos do
-    if Hardware::CPU.arm?
-      url "https://github.com/Isan-Rivkin/surf/releases/download/v1.4.2/surf_1.4.2_darwin_arm64.tar.gz"
-      sha256 "573ba5c5228ef0ba6b7b886ed08c1c184ae54d6a72fb41771bdb32588a9e6647"
+    if Hardware::CPU.intel?
+      url "https://github.com/Isan-Rivkin/surf/releases/download/v1.5.0/surf_1.5.0_darwin_amd64.tar.gz"
+      sha256 "975ca7cd85e1e66982bbd15bd946eca805623c978a7b9b674d4b4557f617dd02"
 
       def install
         bin.install "surf"
       end
     end
-    if Hardware::CPU.intel?
-      url "https://github.com/Isan-Rivkin/surf/releases/download/v1.4.2/surf_1.4.2_darwin_amd64.tar.gz"
-      sha256 "92c214d446eb2ac080982614564991aff4c1744d8a480affac26ec970167a06f"
+    if Hardware::CPU.arm?
+      url "https://github.com/Isan-Rivkin/surf/releases/download/v1.5.0/surf_1.5.0_darwin_arm64.tar.gz"
+      sha256 "d37bb2166a6bf6fe78249fd1040fbfe1e115ea62aa0823a9200a1bef416be4a7"
 
       def install
         bin.install "surf"
@@ -27,17 +27,17 @@ class Surf < Formula
   end
 
   on_linux do
-    if Hardware::CPU.intel?
-      url "https://github.com/Isan-Rivkin/surf/releases/download/v1.4.2/surf_1.4.2_linux_amd64.tar.gz"
-      sha256 "8d479ae1647549da98acf868247a54d12952b7093dcfbe3df691ea12475283cf"
+    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+      url "https://github.com/Isan-Rivkin/surf/releases/download/v1.5.0/surf_1.5.0_linux_arm64.tar.gz"
+      sha256 "be1aa8b4828ccb090fb82542225d4248e65f794cbf5cf178030ab1800c57f8c4"
 
       def install
         bin.install "surf"
       end
     end
-    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/Isan-Rivkin/surf/releases/download/v1.4.2/surf_1.4.2_linux_arm64.tar.gz"
-      sha256 "783f276f22cf892f64de189aabc9b9687f4ddcaf01556a46f401498e26dee766"
+    if Hardware::CPU.intel?
+      url "https://github.com/Isan-Rivkin/surf/releases/download/v1.5.0/surf_1.5.0_linux_amd64.tar.gz"
+      sha256 "9f5942c5fcd01262052709b0cfe6a1688f39c6b2af72833cb2b06436f7b1e3fb"
 
       def install
         bin.install "surf"
