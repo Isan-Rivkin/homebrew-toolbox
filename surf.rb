@@ -5,20 +5,22 @@
 class Surf < Formula
   desc "CLI Text Search across your infrastructure platforms"
   homepage "https://github.com/Isan-Rivkin/surf"
-  version "1.5.0"
+  version "2.0.0"
+
+  depends_on "git"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/Isan-Rivkin/surf/releases/download/v1.5.0/surf_1.5.0_darwin_amd64.tar.gz"
-      sha256 "975ca7cd85e1e66982bbd15bd946eca805623c978a7b9b674d4b4557f617dd02"
+      url "https://github.com/Isan-Rivkin/surf/releases/download/v2.0.0/surf_2.0.0_darwin_amd64.tar.gz"
+      sha256 "7f7ca2e905ad3142d40a07f425090486fb08c4846cd7a554acae1a500866c2ff"
 
       def install
         bin.install "surf"
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/Isan-Rivkin/surf/releases/download/v1.5.0/surf_1.5.0_darwin_arm64.tar.gz"
-      sha256 "d37bb2166a6bf6fe78249fd1040fbfe1e115ea62aa0823a9200a1bef416be4a7"
+      url "https://github.com/Isan-Rivkin/surf/releases/download/v2.0.0/surf_2.0.0_darwin_arm64.tar.gz"
+      sha256 "3602de5c715c59cc5e7c8283d6c211402063f2946029aef1e6c370da456a399b"
 
       def install
         bin.install "surf"
@@ -28,22 +30,20 @@ class Surf < Formula
 
   on_linux do
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/Isan-Rivkin/surf/releases/download/v1.5.0/surf_1.5.0_linux_arm64.tar.gz"
-      sha256 "be1aa8b4828ccb090fb82542225d4248e65f794cbf5cf178030ab1800c57f8c4"
+      url "https://github.com/Isan-Rivkin/surf/releases/download/v2.0.0/surf_2.0.0_linux_arm64.tar.gz"
+      sha256 "e6c7fb322ec18da5c3f166387fc959d7c4769f9092fc6f39f20beddee6876424"
 
       def install
         bin.install "surf"
       end
     end
     if Hardware::CPU.intel?
-      url "https://github.com/Isan-Rivkin/surf/releases/download/v1.5.0/surf_1.5.0_linux_amd64.tar.gz"
-      sha256 "9f5942c5fcd01262052709b0cfe6a1688f39c6b2af72833cb2b06436f7b1e3fb"
+      url "https://github.com/Isan-Rivkin/surf/releases/download/v2.0.0/surf_2.0.0_linux_amd64.tar.gz"
+      sha256 "6f752b438fbbb8bcbce25bb3a4a25450c7ff3fb688cf0abe4231069f9d426285"
 
       def install
         bin.install "surf"
       end
     end
   end
-
-  depends_on "git"
 end
