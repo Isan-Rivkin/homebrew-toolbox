@@ -5,22 +5,22 @@
 class Surf < Formula
   desc "CLI Text Search across your infrastructure platforms"
   homepage "https://github.com/Isan-Rivkin/surf"
-  version "2.1.1"
+  version "2.1.2"
 
   depends_on "git"
 
   on_macos do
-    if Hardware::CPU.arm?
-      url "https://github.com/Isan-Rivkin/surf/releases/download/v2.1.1/surf_2.1.1_darwin_arm64.tar.gz"
-      sha256 "7d8e4f90791f01f4f2dc475b34dad85254302d5baac09c57cb8172d9710529ec"
+    if Hardware::CPU.intel?
+      url "https://github.com/Isan-Rivkin/surf/releases/download/v2.1.2/surf_2.1.2_darwin_amd64.tar.gz"
+      sha256 "9674ee2d09b8b0fba2c5f4d294eb3dced71127b3d05a0aaa35fe36f365152188"
 
       def install
         bin.install "surf"
       end
     end
-    if Hardware::CPU.intel?
-      url "https://github.com/Isan-Rivkin/surf/releases/download/v2.1.1/surf_2.1.1_darwin_amd64.tar.gz"
-      sha256 "551bffcc783d4a40b3a94812a8822f2690c20d00d62436d4e50b93220108daf7"
+    if Hardware::CPU.arm?
+      url "https://github.com/Isan-Rivkin/surf/releases/download/v2.1.2/surf_2.1.2_darwin_arm64.tar.gz"
+      sha256 "101c0d411ab8b3b428fe6e2160163fbce5f32c1ca24d309aed03144372f26d6e"
 
       def install
         bin.install "surf"
@@ -29,17 +29,17 @@ class Surf < Formula
   end
 
   on_linux do
-    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/Isan-Rivkin/surf/releases/download/v2.1.1/surf_2.1.1_linux_arm64.tar.gz"
-      sha256 "defa0e0c7016424232a6aac03100395c8fe5b8a98ec34a966be289672b18d8f0"
+    if Hardware::CPU.intel?
+      url "https://github.com/Isan-Rivkin/surf/releases/download/v2.1.2/surf_2.1.2_linux_amd64.tar.gz"
+      sha256 "0c933d0693d45a706cfcaa77fd261eaaa886ed5740ad5d9e2402f7ec0c15f123"
 
       def install
         bin.install "surf"
       end
     end
-    if Hardware::CPU.intel?
-      url "https://github.com/Isan-Rivkin/surf/releases/download/v2.1.1/surf_2.1.1_linux_amd64.tar.gz"
-      sha256 "b1f142a1850aaa04347cd2caf60b26f4f360da0ce3711f856b6a8602cad2111b"
+    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+      url "https://github.com/Isan-Rivkin/surf/releases/download/v2.1.2/surf_2.1.2_linux_arm64.tar.gz"
+      sha256 "3da2304e653a8d3b28a1de7157c5c98abb8430394ae1cbee6027ee3b8c97e00d"
 
       def install
         bin.install "surf"
