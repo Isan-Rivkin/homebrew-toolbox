@@ -5,22 +5,22 @@
 class Surf < Formula
   desc "CLI Text Search across your infrastructure platforms"
   homepage "https://github.com/Isan-Rivkin/surf"
-  version "2.2.2"
+  version "2.3.0"
 
   depends_on "git"
 
   on_macos do
-    if Hardware::CPU.arm?
-      url "https://github.com/Isan-Rivkin/surf/releases/download/v2.2.2/surf_2.2.2_darwin_arm64.tar.gz"
-      sha256 "692ef7de7133a56a3c294aa32107212b26f9d2b3093d3c4697e70175b68a1f77"
+    on_intel do
+      url "https://github.com/Isan-Rivkin/surf/releases/download/v2.3.0/surf_2.3.0_darwin_amd64.tar.gz"
+      sha256 "dbfb7f7d3f9760001056d67c4e799d075a24df35c5f12ba8c8ce13c352d70d4d"
 
       def install
         bin.install "surf"
       end
     end
-    if Hardware::CPU.intel?
-      url "https://github.com/Isan-Rivkin/surf/releases/download/v2.2.2/surf_2.2.2_darwin_amd64.tar.gz"
-      sha256 "0a3f98885b97ecf2bb458bb7de847b2d9d8729095a1e2dcf2aa8af6a8ec918fd"
+    on_arm do
+      url "https://github.com/Isan-Rivkin/surf/releases/download/v2.3.0/surf_2.3.0_darwin_arm64.tar.gz"
+      sha256 "70a13f560c985ec9082a215da3141b9d9939608689d07ea0eaeaa50da150417c"
 
       def install
         bin.install "surf"
@@ -29,20 +29,24 @@ class Surf < Formula
   end
 
   on_linux do
-    if Hardware::CPU.intel?
-      url "https://github.com/Isan-Rivkin/surf/releases/download/v2.2.2/surf_2.2.2_linux_amd64.tar.gz"
-      sha256 "7d7a41cc63d940ac26f7a6cd463ec434781861a12c663bec639a89ee062d495c"
+    on_intel do
+      if Hardware::CPU.is_64_bit?
+        url "https://github.com/Isan-Rivkin/surf/releases/download/v2.3.0/surf_2.3.0_linux_amd64.tar.gz"
+        sha256 "859b02f49feb1b5dc2539d0487d6c03039395b899c43542bb846d77e1f418720"
 
-      def install
-        bin.install "surf"
+        def install
+          bin.install "surf"
+        end
       end
     end
-    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/Isan-Rivkin/surf/releases/download/v2.2.2/surf_2.2.2_linux_arm64.tar.gz"
-      sha256 "be92c6b27cfc089b954605b9442b18e81994303dd2891fba4f1a8df3c2cac8ee"
+    on_arm do
+      if Hardware::CPU.is_64_bit?
+        url "https://github.com/Isan-Rivkin/surf/releases/download/v2.3.0/surf_2.3.0_linux_arm64.tar.gz"
+        sha256 "ccaac6dc3cc2bbe0d731a59f68f7b40157fd42e3436c0f9c2acb01a3403c22c9"
 
-      def install
-        bin.install "surf"
+        def install
+          bin.install "surf"
+        end
       end
     end
   end
