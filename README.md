@@ -27,3 +27,9 @@ brew install boltdbweb
 ```bash
 brew install surf
 ```
+
+[Termctl](https://github.com/Isan-Rivkin/termctl)
+
+```bash
+brew install termctl
+```
